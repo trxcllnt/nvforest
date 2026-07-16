@@ -82,9 +82,9 @@ endfunction()
 
 # ######################################################################################################################
 # * Build ml_test executable -------------------------------------------------
-ConfigureTest(NAME HOST_BUFFER_TEST raft_proto/buffer.cpp)
+ConfigureTest(NAME HOST_BUFFER_TEST buffer/buffer.cpp)
 if(NVFOREST_ENABLE_GPU)
-  ConfigureTest(NAME DEVICE_BUFFER_TEST raft_proto/buffer.cu)
+  ConfigureTest(NAME DEVICE_BUFFER_TEST buffer/buffer.cu)
 endif()
 ConfigureTest(NAME FOREST_TRAVERSAL_TEST forest/traversal_forest.cpp)
 ConfigureTest(NAME SHARED_MEMORY_BUFFER_TEST infer_kernel/shared_memory_buffer.cu)

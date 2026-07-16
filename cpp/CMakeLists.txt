@@ -58,7 +58,7 @@ option(NVTX "Enable nvtx markers" OFF)
 option(USE_CCACHE "Cache build artifacts with ccache" OFF)
 option(NVFOREST_USE_RAFT_STATIC "Build and statically link the RAFT library" OFF)
 option(NVFOREST_USE_TREELITE_STATIC "Build and statically link the treelite library" OFF)
-option(NVFOREST_EXPORT_TREELITE_LINKAGE "Whether to publicly or privately link treelite to libnvforest++" OFF)
+option(NVFOREST_EXPORT_TREELITE_LINKAGE "Whether to publicly or privately link treelite to libnvforest" OFF)
 option(CUDA_WARNINGS_AS_ERRORS "Enable -Werror=all-warnings for all CUDA compilation" ON)
 
 # The options below allow incorporating libnvforest into another build process without installing all its components.
@@ -134,7 +134,7 @@ endif()
 # ######################################################################################################################
 # * Target names -------------------------------------------------------------
 
-set(NVFOREST_CPP_TARGET "nvforest++")
+set(NVFOREST_CPP_TARGET "nvforest")
 
 # ######################################################################################################################
 # * Conda environment detection ----------------------------------------------
@@ -210,7 +210,7 @@ if(BUILD_NVFOREST_TESTS)
 endif()
 
 # ######################################################################################################################
-# * build libnvforest++ shared library -------------------------------------------
+# * build libnvforest shared library -------------------------------------------
 
 if(NVFOREST_ENABLE_GPU)
   file(
